@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
   Alert,
+  Image,
   ImageBackground,
   Keyboard,
   StyleSheet,
@@ -68,7 +69,20 @@ export default function RegisterScreen() {
               paddingBottom: isKeyboardShown ? 140 : 66,
             }}
           >
-            <View style={styles.iconThumb}></View>
+            <View style={styles.iconThumbContainer}>
+              <TouchableOpacity
+                activeOpacity={0.5}
+                style={styles.addIconButton}
+                onPress={() => {}}
+              >
+                <Image
+                  source={require('../../assets/images/add_icon.png')}
+                  style={styles.addIcon}
+                />
+              </TouchableOpacity>
+              <View style={styles.iconThumb}></View>
+            </View>
+
             <Text style={styles.header}>Реєстрація</Text>
             <TextInput
               style={focusedLogin ? styles.inputFocused : styles.input}
@@ -159,17 +173,33 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 25,
     paddingHorizontal: 16,
   },
-  iconThumb: {
+  iconThumbContainer: {
     position: 'relative',
     width: 120,
     height: 120,
-    backgroundColor: '#F6F6F6',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: -60,
     marginBottom: 32,
+  },
+  iconThumb: {
     borderRadius: 16,
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#F6F6F6',
     overflow: 'hidden',
+  },
+  addIconButton: {
+    position: 'absolute',
+    zIndex: 10,
+    right: -12,
+    bottom: 18,
+    width: 24,
+    height: 24,
+  },
+  addIcon: {
+    width: 24,
+    height: 24,
   },
   header: {
     color: '#212121',
