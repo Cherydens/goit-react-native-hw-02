@@ -1,10 +1,10 @@
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 
-import RegisterScreen from './screens/auth/RegisterScreen';
-import LoginScreen from './screens/auth/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen/RegisterScreen';
+import LoginScreen from './screens/LoginScreen/LoginScreen';
 
-export default function App() {
+const App = () => {
   const [fontsLoaded] = useFonts({
     'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
     'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
@@ -21,4 +21,5 @@ export default function App() {
       <StatusBar style="auto" />
     </>
   );
-}
+};
+export default App;
